@@ -5,6 +5,7 @@ import { DcPage, HeroPage, MarvelPage, SearchPage } from "../pages";
 
 
 export const childrenHeroesRoutes = [
+        
         {
           path: "/marvel",
           element: <MarvelPage />,
@@ -22,7 +23,7 @@ export const childrenHeroesRoutes = [
           element: <HeroPage />,
         },
         {
-          path: "/*",
+          path: "/",
           element: <Navigate to={"/marvel"} />,
         }, 
   
