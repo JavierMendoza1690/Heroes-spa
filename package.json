@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview"
   },
+  "homepage": "https://javiermendoza1690.github.io/Heroes-spa/",
   "dependencies": {
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
