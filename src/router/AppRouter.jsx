@@ -1,5 +1,5 @@
 
-import { createBrowserRouter, createHashRouter, Navigate, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, createHashRouter, RouterProvider } from "react-router-dom";
 import { childrenHeroesRoutes } from "../heroes/routes";
 import { PrivateRoute } from "./PrivateRoute";
 import { PublicRoute } from "./PublicRoute";

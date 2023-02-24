@@ -1,5 +1,4 @@
 import { Navigate } from "react-router-dom";
-import { HeroesApp } from "../../HeroesApp";
 import { DcPage, HeroPage, MarvelPage, SearchPage } from "../pages";
 
 
