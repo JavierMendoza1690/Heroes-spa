@@ -9,7 +9,7 @@ first_appearance,
 characters
 }) => {
 
-    const heroImagesUrl =`heroes/${id}.jpg`;
+    const heroImagesUrl =`./heroes/${id}.jpg`;
 
 
   return (
