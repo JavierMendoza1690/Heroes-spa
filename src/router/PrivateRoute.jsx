@@ -3,7 +3,7 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../auth/context'
 import { HeroesApp } from '../HeroesApp';
 
-export const PrivateRoute = ({ children }) => {
+export const PrivateRoute = () => {
     const authState = useContext(AuthContext);
 
     const {logged} = authState.authState;
@@ -12,7 +12,6 @@ export const PrivateRoute = ({ children }) => {
     const lastPath = pathname + search;
     
     localStorage.setItem('lastPath', lastPath)
-
   return (logged
     ? <HeroesApp />
     : <Navigate to={'/login'}/>);

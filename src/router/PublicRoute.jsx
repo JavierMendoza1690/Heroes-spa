@@ -10,7 +10,6 @@ export const PublicRoute = () => {
     const authState = useContext(AuthContext);
 
     const {logged} = authState.authState;
-    
     return (!logged
         ? <LoginPage />
         : <Navigate to={'/marvel'}/>
