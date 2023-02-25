@@ -10,7 +10,7 @@ export const PrivateRoute = () => {
     
     const {pathname, search} = useLocation();
     const lastPath = pathname + search;
-    
+  
     localStorage.setItem('lastPath', lastPath)
   return (logged
     ? <HeroesApp />

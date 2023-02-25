@@ -13,7 +13,7 @@ const router = createHashRouter([
       element: <PublicRoute />,
     },
     {
-      path: "/",
+      path: "/*",
       element: <PrivateRoute />,
       children: childrenHeroesRoutes,
     },

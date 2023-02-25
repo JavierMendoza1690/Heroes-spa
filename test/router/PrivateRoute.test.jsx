@@ -51,7 +51,7 @@ Storage.prototype.setItem = jest.fn();
                 <AuthContext.Provider value={contexValue}>
 
                 <Routes>
-                    <Route index element = {<PrivateRoute />}  />
+                    <Route path="/*" element= {<PrivateRoute />}  />
                     <Route path="/login" element={<h1>Entro a login</h1>} /> 
                 </Routes> 
 
