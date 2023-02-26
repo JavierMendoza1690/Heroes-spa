@@ -1,11 +1,24 @@
 import { fireEvent, render, screen } from "@testing-library/react"
-import { MemoryRouter, Route, Routes } from "react-router-dom";
-import { AuthContext } from "../../../src/auth";
+import { MemoryRouter, Route, Routes, useNavigate } from "react-router-dom";
+import { AuthContext, AuthProvider } from "../../../src/auth";
 import { PrivateRoute } from "../../../src/router/PrivateRoute";
 import { PublicRoute } from "../../../src/router/PublicRoute";
 import { Navbar } from "../../../src/ui";
 
+const mockedUseNavigate = jest.fn();
+
+
+jest.mock('react-router-dom', ()=>({
+    ...jest.requireActual('react-router-dom'),
+    useNavigate: () => mockedUseNavigate,
+
+}));
+
+
+
 describe('Pruebas en el <Navbar/>', () => { 
+
+    beforeEach(()=> jest.clearAllMocks());
 
     test('Debe Mostrar el nombre del usuario si está logeado', () => {
 
@@ -56,9 +69,12 @@ describe('Pruebas en el <Navbar/>', () => {
                 user:{
                     name: 'Strider',
                     id: 'ABC',
-                }
-            }
+                },
+            },
+            logout: jest.fn(),
         }
+
+        // AuthProvider.mock
         
         render(
             <MemoryRouter initialEntries={["/login"]}>
@@ -84,7 +100,13 @@ describe('Pruebas en el <Navbar/>', () => {
         );
         
         const btn = screen.getByRole("button");
-        // fireEvent.click(btn);
+        fireEvent.click(btn);
+        expect(contexValue.logout).toHaveBeenCalled();
+
+        expect(mockedUseNavigate).toHaveBeenCalled();
+        expect(mockedUseNavigate).toHaveBeenCalledWith("/login", {"replace": true});
+
+
        
 
 

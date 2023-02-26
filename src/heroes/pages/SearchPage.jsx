@@ -21,6 +21,7 @@ export const SearchPage = () => {
   });
 
   const onSearchSubmit = (event) => {
+    
     event.preventDefault();
 
     navigate(`?q=${searchText.toLowerCase().trim()}`);
@@ -40,7 +41,7 @@ export const SearchPage = () => {
           <h4>Searching</h4>
           <hr />
 
-          <form onSubmit={onSearchSubmit}>
+          <form onSubmit={onSearchSubmit} aria-label="form">
             <input
               type="text"
               placeholder="Search a hero"
@@ -66,7 +67,8 @@ export const SearchPage = () => {
           )}
 
           {showError && (
-            <div className="alert alert-danger img-thumbnail animate__animated animate__fadeIn">
+            <div className="alert alert-danger img-thumbnail animate__animated animate__fadeIn"
+            aria-label="no-hero">
               No hero with <b>{q}</b>
             </div>
           )}
